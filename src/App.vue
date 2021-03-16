@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="#6C63FF"
+      dark
+    >
+      <v-btn
+        href="https://github.com/rickimoore"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Made by Ricki</span>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <div style="height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <FileDownloader/>
+        <FileResults />
+      </div>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FileDownloader from "@/components/FileDownloader";
+import FileResults from "@/components/FileResults";
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    FileDownloader,
+    FileResults
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
